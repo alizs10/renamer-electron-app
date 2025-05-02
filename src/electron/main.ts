@@ -46,6 +46,22 @@ ipcMain.handle('get-files', async (_event, folderPath: string) => {
     }
 });
 
+ipcMain.handle(
+    "renameFiles",
+    async (_event, folderPath: string, renames: { oldName: string; newName: string }[]): Promise<{ success: boolean; error?: string }> => {
+        try {
+            for (const { oldName, newName } of renames) {
+                const oldPath = path.join(folderPath, oldName);
+                const newPath = path.join(folderPath, newName);
+                await fs.rename(oldPath, newPath);
+            }
+            return { success: true };
+        } catch (error: any) {
+            return { success: false, error: error.message };
+        }
+    }
+);
+
 app.on('ready', () => {
     createWindow();
 })

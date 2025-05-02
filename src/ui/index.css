@@ -14,3 +14,7 @@
 .app_button_active {
     @apply p-3 bg-sky-400 text-black rounded-xl cursor-pointer transition-all duration-300;
 }
+
+.app_button_disabled {
+    @apply p-3 bg-gray-800 cursor-not-allowed grayscale-100 text-gray-400 rounded-xl transition-all duration-300;
+}
