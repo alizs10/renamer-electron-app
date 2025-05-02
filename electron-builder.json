@@ -1,0 +1,28 @@
+{
+    "appId": "com.alizs10.renamer",
+    "productName": "Renamer",
+    "icon": "./desktopIcon.png",
+    "files": [
+        "dist-electron",
+        "dist-react"
+    ],
+    "extraResources": [
+        "dist-electron/preload.js"
+    ],
+    "directories": {
+        "output": "release"
+    },
+    "mac": {
+        "target": "dmg"
+    },
+    "win": {
+        "target": [
+            "portable",
+            "msi"
+        ]
+    },
+    "linux": {
+        "target": "AppImage",
+        "category": "Utility"
+    }
+}

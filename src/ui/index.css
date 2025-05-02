@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+
+/* Hide scrollbar in Chrome */
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+.app_button {
+    @apply p-3 bg-gray-800 hover:bg-gray-600 text-white rounded-xl cursor-pointer transition-all duration-300;
+}
+
+.app_button_active {
+    @apply p-3 bg-sky-400 text-black rounded-xl cursor-pointer transition-all duration-300;
+}
